@@ -5,11 +5,19 @@ ScreensManager:
 
 <MainScreen>:
     name: "Main screen"
-
     FloatLayout:
+        Image:
+            id: image
+            size_hint: self.texture_size
+            pos_hint:{"center_x": .5, "center_y": .75}
+        Button:
+            text: "Загрузить последнее фото"
+            pos_hint: {"center_x": .5, "center_y": 0.4}
+            size_hint: .9, .1
+            on_press: root.release()
         Button:
             text: "Открыть камеру"
-            pos_hint: {"center_x": .5, "center_y": .5}
+            pos_hint: {"center_x": .5, "center_y": .15}
             size_hint: .9, .2
             on_release: app.root.current = "Camera"
 
